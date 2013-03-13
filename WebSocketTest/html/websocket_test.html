@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var webSocket = new WebSocket("ws://127.0.0.1:30000");
+		webSocket.onopen = function() {
+			alert("已打开链接");
+			webSocket.send("hello from web socket.");
+		}
+		webSocket.onmessage = function(event) {
+			alert("received message : " + event.data);
+		}
+	</script>
+
+</body>
+</html>
